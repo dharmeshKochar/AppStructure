@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
@@ -115,9 +116,29 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         let request = LoginRequest(email:emailTextField.text , password: passwordTextField.text)
         let validationResult = viewModel.loginUser(loginRequest: request)
         if validationResult.result {
-            Alert.sendAlert(self, "Details are correct", "Successfully LoggedIn")
+            WelcomeVC.name = emailTextField.text!
+            AppRouter.gotoWelcomeVC(vc: self)
         } else {
             Alert.sendAlert(self, "" , validationResult.error!)
+        }
+    }
+    
+    @IBAction func fbButtonTapped(_ sender: UIButton) {
+        FBSDKLoginKit.LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, err in
+            if err != nil {
+                Alert.sendAlert(self, "fb Login Failed","")
+            }
+        }
+        if let token = AccessToken.current,
+               !token.isExpired {
+            let token = token.tokenString
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token, version: nil, httpMethod: .get)
+            request.start { connection, result, error in
+                var dic:[String:String?] = [:]
+                dic = result as! [String:String?]
+                WelcomeVC.name = (dic["name"] ?? "") ?? ""
+                AppRouter.gotoWelcomeVC(vc: self)
+            }
         }
     }
 }
@@ -156,4 +177,23 @@ extension LoginVC: UIViewControllerTransitioningDelegate {
         transition.circleColor = .clear
         return transition
    }
+}
+
+//MARK:- Extension for Facebook Login
+extension LoginVC: LoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        let token = result?.token?.tokenString
+        let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token, version: nil, httpMethod: .get)
+        request.start { connection, result, error in
+            var dic:[String:String?] = [:]
+            dic = result as! [String:String?]
+            WelcomeVC.name = (dic["name"] ?? "") ?? ""
+        }
+        AppRouter.gotoWelcomeVC(vc: self)
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("logout")
+    }
 }

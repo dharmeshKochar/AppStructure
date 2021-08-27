@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class SignUpVC: UIViewController ,UITextFieldDelegate{
     
@@ -122,6 +123,24 @@ class SignUpVC: UIViewController ,UITextFieldDelegate{
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func fbButtonTapped(_ sender: UIButton) {
+        FBSDKLoginKit.LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, err in
+            if err != nil {
+                Alert.sendAlert(self, "fb Login Failed","")
+            }
+        }
+        if let token = AccessToken.current,
+               !token.isExpired {
+            let token = token.tokenString
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token, version: nil, httpMethod: .get)
+            request.start { connection, result, error in
+                var dic:[String:String?] = [:]
+                dic = result as! [String:String?]
+                WelcomeVC.name = (dic["name"] ?? "") ?? ""
+                AppRouter.gotoWelcomeVC(vc: self)
+            }
+        }
+    }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         let request = SignUpRequest(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
@@ -149,5 +168,24 @@ extension SignUpVC {
         titleEmailGap.constant = 72
         confirmpasswordSignupGap.constant = 30
         signupStackGap.constant = 52
+    }
+}
+
+//MARK:- Extension for Facebook Login
+extension SignUpVC: LoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        let token = result?.token?.tokenString
+        let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token, version: nil, httpMethod: .get)
+        request.start { connection, result, error in
+            var dic:[String:String?] = [:]
+            dic = result as! [String:String?]
+            WelcomeVC.name = (dic["name"] ?? "") ?? ""
+        }
+        AppRouter.gotoWelcomeVC(vc: self)
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("logout")
     }
 }

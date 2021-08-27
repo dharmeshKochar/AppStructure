@@ -80,6 +80,9 @@
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fbButtonTapped:" destination="35q-Gn-s7H" eventType="touchUpInside" id="km1-7Y-PX2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OT-b2-8vJ">
                                         <rect key="frame" x="68" y="0.0" width="44" height="44"/>
@@ -267,6 +270,9 @@
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fbButtonTapped:" destination="X6t-Xi-ly9" eventType="touchUpInside" id="p5H-I3-uhx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrX-bR-GR9">
                                         <rect key="frame" x="68" y="0.0" width="44" height="44"/>
@@ -357,6 +363,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJm-Mv-Oxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="-13.392857142857142"/>
+        </scene>
+        <!--WelcomeVC-->
+        <scene sceneID="xUm-rL-zhl">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" id="qqT-W7-kU5" customClass="WelcomeVC" customModule="AppStructure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XCW-NX-AHy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwA-ZV-nUo">
+                                <rect key="frame" x="115.5" y="314" width="183.5" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gr-wa-Anl">
+                                <rect key="frame" x="175" y="433" width="64" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r13-MI-UNe"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="1Gr-wa-Anl" firstAttribute="centerY" secondItem="XCW-NX-AHy" secondAttribute="centerY" id="HgZ-ug-xwP"/>
+                            <constraint firstItem="1Gr-wa-Anl" firstAttribute="top" secondItem="PwA-ZV-nUo" secondAttribute="bottom" constant="64" id="VVC-NI-wUO"/>
+                            <constraint firstItem="PwA-ZV-nUo" firstAttribute="centerX" secondItem="XCW-NX-AHy" secondAttribute="centerX" id="bO7-Lq-H3N"/>
+                            <constraint firstItem="1Gr-wa-Anl" firstAttribute="centerX" secondItem="XCW-NX-AHy" secondAttribute="centerX" id="xyX-iH-kEk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="1Gr-wa-Anl" id="tay-uz-gfw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0te-sx-0ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2233" y="-13"/>
         </scene>
     </scenes>
     <resources>
