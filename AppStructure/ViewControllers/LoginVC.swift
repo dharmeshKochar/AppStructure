@@ -7,12 +7,15 @@
 
 import UIKit
 import FBSDKLoginKit
+import Swifter
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
     //MARK:- Properties
     let transition = CircularTransition()
     let viewModel = LoginVM()
+    var swifter: Swifter!
+    var accToken: Credential.OAuthAccessToken?
     
     //MARK:- IBOutlets
     @IBOutlet weak var fbStack: UIStackView!
@@ -58,6 +61,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         emailTextField.addTarget(self, action: #selector(SignUpVC.validEmail), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(SignUpVC.validPassword), for: .editingChanged)
+        
     }
     
     private func handleSignUpButtonAnimation(){
@@ -123,6 +127,16 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func twitteButtonTapped(_ sender: UIButton) {
+        self.swifter = Swifter(consumerKey: TwitterConstants.CONSUMER_KEY, consumerSecret: TwitterConstants.CONSUMER_SECRET_KEY)
+                self.swifter.authorize(withCallback: URL(string: TwitterConstants.CALLBACK_URL)!, presentingFrom: self, success: { accessToken, _ in
+                    self.accToken = accessToken
+                    self.getUserProfile()
+                }, failure: { _ in
+                    print("ERROR: Trying to authorize")
+                })
+    }
+    
     @IBAction func fbButtonTapped(_ sender: UIButton) {
         FBSDKLoginKit.LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, err in
             if err != nil {
@@ -157,7 +171,7 @@ extension LoginVC {
         toptitleGap.constant = 20
         passwordforgetGap.constant = 52
         titleEmailGap.constant = 72
-        loginStackGap.constant = 52
+        loginStackGap.constant = 32
         loginForgotGap.constant = 40
     }
 }
@@ -196,4 +210,22 @@ extension LoginVC: LoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("logout")
     }
+}
+
+//MARK: extension for twitter
+extension LoginVC {
+    func getUserProfile() {
+            self.swifter.verifyAccountCredentials(includeEntities: false, skipStatus: false, includeEmail: true, success: { json in
+                // Twitter Name
+                if let twitterName = json["name"].string {
+                    WelcomeVC.name = twitterName
+                        AppRouter.gotoWelcomeVC(vc: self)
+                } else {
+                    print("Not exists")
+                }
+                print("Twitter Access Token: \(self.accToken?.key ?? "Not exists")")
+            }) { error in
+                print("ERROR: \(error.localizedDescription)")
+            }
+        }
 }

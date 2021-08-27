@@ -7,6 +7,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Swifter
 
 @UIApplicationMain
 
@@ -37,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                 annotation: options[UIApplication.OpenURLOptionsKey.annotation]
             )
+            
+                    let callbackUrl = URL(string: TwitterConstants.CALLBACK_URL)!
+                    Swifter.handleOpenURL(url, callbackURL: callbackUrl)
+                    return true
         }
     
         

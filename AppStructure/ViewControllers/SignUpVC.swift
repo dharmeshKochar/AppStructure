@@ -7,11 +7,14 @@
 
 import UIKit
 import FBSDKLoginKit
+import Swifter
 
 class SignUpVC: UIViewController ,UITextFieldDelegate{
     
     //MARK:- Properties
     var viewModel = SignUpVM()
+    var swifter: Swifter!
+    var accToken: Credential.OAuthAccessToken?
     
     //MARK:- IBOutles
     @IBOutlet weak var titleLabel: UILabel!
@@ -123,6 +126,7 @@ class SignUpVC: UIViewController ,UITextFieldDelegate{
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func fbButtonTapped(_ sender: UIButton) {
         FBSDKLoginKit.LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { result, err in
             if err != nil {
@@ -140,6 +144,16 @@ class SignUpVC: UIViewController ,UITextFieldDelegate{
                 AppRouter.gotoWelcomeVC(vc: self)
             }
         }
+    }
+    
+    @IBAction func twitteButtonTapped(_ sender: UIButton) {
+        self.swifter = Swifter(consumerKey: TwitterConstants.CONSUMER_KEY, consumerSecret: TwitterConstants.CONSUMER_SECRET_KEY)
+                self.swifter.authorize(withCallback: URL(string: TwitterConstants.CALLBACK_URL)!, presentingFrom: self, success: { accessToken, _ in
+                    self.accToken = accessToken
+                    self.getUserProfile()
+                }, failure: { _ in
+                    print("ERROR: Trying to authorize")
+                })
     }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
@@ -189,4 +203,24 @@ extension SignUpVC: LoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("logout")
     }
+}
+
+//MARK: extension for twitter
+extension SignUpVC {
+    func getUserProfile() {
+            self.swifter.verifyAccountCredentials(includeEntities: false, skipStatus: false, includeEmail: true, success: { json in
+                // Twitter Name
+                if let twitterName = json["name"].string {
+                    WelcomeVC.name = twitterName
+                        AppRouter.gotoWelcomeVC(vc: self)
+                    
+                } else {
+                    print("Not exists")
+                }
+                print("Twitter Access Token: \(self.accToken?.key ?? "Not exists")")
+
+            }) { error in
+                print("ERROR: \(error.localizedDescription)")
+            }
+        }
 }
