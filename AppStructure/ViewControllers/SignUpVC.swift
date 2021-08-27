@@ -146,7 +146,8 @@ class SignUpVC: UIViewController ,UITextFieldDelegate{
         let request = SignUpRequest(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
         let validationResult = viewModel.signUpUser(signUpRequest: request)
         if validationResult.result {
-            Alert.sendAlert(self, "Details are correct", "Successfully SignedIn")
+            WelcomeVC.name = emailTextField.text!
+            AppRouter.gotoWelcomeVC(vc: self)
         } else{
             Alert.sendAlert(self, "", validationResult.error!)
         }
