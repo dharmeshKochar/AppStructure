@@ -14,6 +14,10 @@
 		8476EDD126D89E4A00D7FF01 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = 8476EDD026D89E4A00D7FF01 /* FacebookGamingServices */; };
 		8476EDD326D89E4A00D7FF01 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8476EDD226D89E4A00D7FF01 /* FacebookLogin */; };
 		8476EDD526D8A0A200D7FF01 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476EDD426D8A0A200D7FF01 /* WelcomeVC.swift */; };
+		847D7D0B26DCD39A00EED1D3 /* UItableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D7D0A26DCD39A00EED1D3 /* UItableView.swift */; };
+		847D7D0E26DCD65700EED1D3 /* animatedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D7D0C26DCD65700EED1D3 /* animatedTableCell.swift */; };
+		847D7D0F26DCD65700EED1D3 /* animatedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847D7D0D26DCD65700EED1D3 /* animatedTableCell.xib */; };
+		847D7D1326DD165F00EED1D3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D7D1226DD165F00EED1D3 /* UIViewExtension.swift */; };
 		849A094B26D3DEE800C284CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A094A26D3DEE800C284CE /* AppDelegate.swift */; };
 		849A095426D3DEE900C284CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849A095326D3DEE900C284CE /* Assets.xcassets */; };
 		849A095726D3DEE900C284CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A095526D3DEE900C284CE /* LaunchScreen.storyboard */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		8452F57326D687B0000D3B77 /* FloatingPlacehoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlacehoder.swift; sourceTree = "<group>"; };
 		8476EDD426D8A0A200D7FF01 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		847D7D0A26DCD39A00EED1D3 /* UItableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableView.swift; sourceTree = "<group>"; };
+		847D7D0C26DCD65700EED1D3 /* animatedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animatedTableCell.swift; sourceTree = "<group>"; };
+		847D7D0D26DCD65700EED1D3 /* animatedTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = animatedTableCell.xib; sourceTree = "<group>"; };
+		847D7D1226DD165F00EED1D3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		849A094726D3DEE800C284CE /* AppStructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStructure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A094A26D3DEE800C284CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849A095326D3DEE900C284CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		847D7D1426DD4C1800EED1D3 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				847D7D0C26DCD65700EED1D3 /* animatedTableCell.swift */,
+				847D7D0D26DCD65700EED1D3 /* animatedTableCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		849A093E26D3DEE800C284CE = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +121,7 @@
 			children = (
 				84ED057526D52844003BF964 /* Model */,
 				84ED057226D527BF003BF964 /* ViewModel */,
+				847D7D1426DD4C1800EED1D3 /* Xibs */,
 				849A096226D3DF8500C284CE /* Controller */,
 				849A096126D3DF5F00C284CE /* ViewControllers */,
 				849A095E26D3DEFF00C284CE /* StoryBoards */,
@@ -167,6 +185,8 @@
 				849A097326D4040800C284CE /* CircularTransition.swift */,
 				84ED057026D52777003BF964 /* Alert.swift */,
 				8452F57326D687B0000D3B77 /* FloatingPlacehoder.swift */,
+				847D7D0A26DCD39A00EED1D3 /* UItableView.swift */,
+				847D7D1226DD165F00EED1D3 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				849A096026D3DF5600C284CE /* PreLogin.storyboard in Resources */,
+				847D7D0F26DCD65700EED1D3 /* animatedTableCell.xib in Resources */,
 				849A095726D3DEE900C284CE /* LaunchScreen.storyboard in Resources */,
 				849A095426D3DEE900C284CE /* Assets.xcassets in Resources */,
 			);
@@ -295,8 +316,11 @@
 				849A097226D3F76C00C284CE /* SceneDelegate.swift in Sources */,
 				849A097026D3F27700C284CE /* SignUpVC.swift in Sources */,
 				84ED057F26D52D88003BF964 /* SignUpVM.swift in Sources */,
+				847D7D1326DD165F00EED1D3 /* UIViewExtension.swift in Sources */,
 				84F9FBDA26D807D000F6768F /* LoginPageValidation.swift in Sources */,
 				84ED057B26D52844003BF964 /* LoginModel.swift in Sources */,
+				847D7D0E26DCD65700EED1D3 /* animatedTableCell.swift in Sources */,
+				847D7D0B26DCD39A00EED1D3 /* UItableView.swift in Sources */,
 				84E745FF26D8E16D0019213E /* TwitterConstants.swift in Sources */,
 				8476EDD526D8A0A200D7FF01 /* WelcomeVC.swift in Sources */,
 				849A096926D3E05800C284CE /* AppStoryboards.swift in Sources */,
