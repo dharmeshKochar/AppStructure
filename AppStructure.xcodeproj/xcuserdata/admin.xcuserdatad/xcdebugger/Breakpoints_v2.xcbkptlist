@@ -20,5 +20,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppStructure/Xibs/AnimatedTableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AnimatedTableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - 7e32f33e04fda3eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.profileImageView.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - 49e29c1b1bfd7d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.profileImageView.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - d2378b96928a0c68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.profileImageView.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - b1383d3793759e94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.profileImageView.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - 10987575206f8f25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; AppStructure.AnimatedTableCell"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "3E4BA316-E4CC-4CB4-8BFF-F88AC3002273 - 2f0417723c6616c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStructure.AnimatedTableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AppStructure.AnimatedTableCell&gt;"
+                  moduleName = "AppStructure"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/AppinventivLiveProject/AppStructure/AppStructure/Xibs/AnimatedTableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

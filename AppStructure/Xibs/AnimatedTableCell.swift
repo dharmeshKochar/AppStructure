@@ -7,9 +7,9 @@
 
 import UIKit
 
-class animatedTableCell: UITableViewCell {
-    @IBOutlet weak var profileImageView: UIImageView!
+class AnimatedTableCell: UITableViewCell {
     
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!

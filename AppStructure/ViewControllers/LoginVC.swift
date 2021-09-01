@@ -37,8 +37,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        handleSignUpButtonAnimation()
-        handlefbButtonAnimation()
+//        handleSignUpButtonAnimation()
+//        handlefbButtonAnimation()
     }
     
     override func viewDidLayoutSubviews() {

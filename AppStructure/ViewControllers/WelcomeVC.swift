@@ -20,15 +20,24 @@ class WelcomeVC: UIViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var animationtableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var tabBarView: UIView!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     //MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialSetup()
+       
+    }
+    
+    func initialSetup() {
         nameLabel.text = WelcomeVC.name
         animationtableView.delegate = self
         animationtableView.dataSource = self
-        self.animationtableView.registerCell(with: animatedTableCell.self)
-        
+        self.animationtableView.registerCell(with: AnimatedTableCell.self)
+        tabBarView.layer.cornerRadius = 24
+        tabBarView.layer.masksToBounds = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { [self] in
              profilesName = "Donald Trump"
              addresses = "Presidency Candidate United state"
@@ -37,18 +46,37 @@ class WelcomeVC: UIViewController {
              image = UIImage(named: "sample1")
              self.animationtableView.reloadData()
         })
+        imageAnimation()
     }
     
+    func imageAnimation() {
+        imageView.animationImages = [UIImage(named: "img1"),UIImage(named: "img2"),UIImage(named: "img3"),
+                                 UIImage(named: "img4"),UIImage(named: "img5"),UIImage(named: "img6"),UIImage(named: "img7")] as! [UIImage]
+        imageView.animationDuration = 3
+        imageView.startAnimating()
+    }
+    
+    @IBAction func plusButtonAction(_ sender: UIButton) {
+        imageView.stopAnimating()
+        imageView.image = UIImage(named: "img7")
+        UIView.animate(withDuration: 2) { [self] in
+            plusButton.center.y = plusButton.center.y - 32 }
+            completion: { [self] _ in
+                plusButton.center.y = plusButton.center.y - 32
+                plusButton.setImage(UIImage(systemName: "dot.circle"), for: .selected)
+            }
+    }
+     
 }
 
 //MARK:- Extension for TableView
 extension WelcomeVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(with: animatedTableCell.self, indexPath: indexPath)
+        let cell = tableView.dequeueCell(with: AnimatedTableCell.self, indexPath: indexPath)
         cell.nameLabel.text = profilesName
         cell.addressLabel.text = addresses
         cell.phoneNumLabel.text = phone

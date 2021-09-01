@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIView{
+extension UIView {
     
     func addGradient() {
         
