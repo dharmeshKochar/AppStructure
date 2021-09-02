@@ -22,7 +22,6 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tabBarView: UIView!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
     
     //MARK:- ViewLifeCycle
     override func viewDidLoad() {
@@ -46,19 +45,9 @@ class WelcomeVC: UIViewController {
              image = UIImage(named: "sample1")
              self.animationtableView.reloadData()
         })
-        imageAnimation()
-    }
-    
-    func imageAnimation() {
-        imageView.animationImages = [UIImage(named: "img1"),UIImage(named: "img2"),UIImage(named: "img3"),
-                                 UIImage(named: "img4"),UIImage(named: "img5"),UIImage(named: "img6"),UIImage(named: "img7")] as! [UIImage]
-        imageView.animationDuration = 3
-        imageView.startAnimating()
     }
     
     @IBAction func plusButtonAction(_ sender: UIButton) {
-        imageView.stopAnimating()
-        imageView.image = UIImage(named: "img7")
         UIView.animate(withDuration: 2) { [self] in
             plusButton.center.y = plusButton.center.y - 32 }
             completion: { [self] _ in

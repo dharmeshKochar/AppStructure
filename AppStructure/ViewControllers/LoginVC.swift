@@ -212,7 +212,7 @@ extension LoginVC: LoginButtonDelegate {
     }
 }
 
-//MARK: extension for twitter
+//MARK: Extension for twitter
 extension LoginVC {
     func getUserProfile() {
             self.swifter.verifyAccountCredentials(includeEntities: false, skipStatus: false, includeEmail: true, success: { json in
