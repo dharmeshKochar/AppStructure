@@ -85,7 +85,7 @@
                                             <action selector="fbButtonTapped:" destination="35q-Gn-s7H" eventType="touchUpInside" id="km1-7Y-PX2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OT-b2-8vJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OT-b2-8vJ" customClass="ASAuthorizationAppleIDButton">
                                         <rect key="frame" x="68" y="0.0" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="in">
@@ -96,6 +96,9 @@
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="appleButtonTapped:" destination="35q-Gn-s7H" eventType="touchUpInside" id="feN-MN-lei"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THq-OZ-3nO">
                                         <rect key="frame" x="136" y="0.0" width="44" height="44"/>
@@ -260,7 +263,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="rU5-Lj-peh">
-                                <rect key="frame" x="60" y="599" width="180" height="44"/>
+                                <rect key="frame" x="60" y="587" width="180" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koS-II-oHu">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -288,6 +291,9 @@
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="appleButtonTapped:" destination="X6t-Xi-ly9" eventType="touchUpInside" id="B7U-ME-wZU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-IL-4ea">
                                         <rect key="frame" x="136" y="0.0" width="44" height="44"/>
@@ -305,7 +311,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vVk-fQ-eIm">
-                                <rect key="frame" x="-110" y="589" width="110" height="64"/>
+                                <rect key="frame" x="-110" y="577" width="110" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-R2-PcS">
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="64"/>
@@ -346,13 +352,14 @@
                             <constraint firstItem="BO8-aj-8EK" firstAttribute="centerX" secondItem="QBw-le-Ehe" secondAttribute="centerX" id="MeR-zC-Aba"/>
                             <constraint firstItem="t7W-JO-XP1" firstAttribute="top" secondItem="uuG-FQ-dPa" secondAttribute="top" constant="20" id="Mv2-VG-c8i"/>
                             <constraint firstItem="3lN-LS-TUN" firstAttribute="height" secondItem="cBs-Hf-cwU" secondAttribute="height" id="PM9-Fl-spP"/>
-                            <constraint firstItem="vVk-fQ-eIm" firstAttribute="centerY" secondItem="rU5-Lj-peh" secondAttribute="centerY" id="Pyh-TK-g5R"/>
                             <constraint firstItem="ySd-vF-XvN" firstAttribute="leading" secondItem="3lN-LS-TUN" secondAttribute="leading" id="Q61-Hw-KLd"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vVk-fQ-eIm" secondAttribute="bottom" constant="30" id="T4N-1p-l2j"/>
+                            <constraint firstItem="uuG-FQ-dPa" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rU5-Lj-peh" secondAttribute="bottom" constant="30" id="TpK-zS-jZE"/>
                             <constraint firstItem="t7W-JO-XP1" firstAttribute="centerX" secondItem="QBw-le-Ehe" secondAttribute="centerX" id="WBN-SM-O7E"/>
                             <constraint firstItem="ySd-vF-XvN" firstAttribute="top" secondItem="3lN-LS-TUN" secondAttribute="bottom" constant="24" id="Xv7-UH-Jyr"/>
-                            <constraint firstItem="rU5-Lj-peh" firstAttribute="top" secondItem="BO8-aj-8EK" secondAttribute="bottom" constant="52" id="ZQm-92-zOK"/>
+                            <constraint firstItem="rU5-Lj-peh" firstAttribute="top" secondItem="BO8-aj-8EK" secondAttribute="bottom" constant="40" id="ZQm-92-zOK"/>
                             <constraint firstItem="cBs-Hf-cwU" firstAttribute="height" secondItem="ySd-vF-XvN" secondAttribute="height" id="aHt-32-cZR"/>
+                            <constraint firstItem="vVk-fQ-eIm" firstAttribute="centerY" secondItem="rU5-Lj-peh" secondAttribute="centerY" id="pUU-PL-R7v"/>
                             <constraint firstItem="BO8-aj-8EK" firstAttribute="top" secondItem="ySd-vF-XvN" secondAttribute="bottom" constant="30" id="zaf-AJ-4jW"/>
                         </constraints>
                     </view>

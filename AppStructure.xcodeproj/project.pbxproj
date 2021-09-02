@@ -52,6 +52,7 @@
 		84210A4A26DF741D00DE797F /* WalkthroughCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkthroughCollectionCell.xib; sourceTree = "<group>"; };
 		84210A4D26DF75E500DE797F /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		8452F57326D687B0000D3B77 /* FloatingPlacehoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlacehoder.swift; sourceTree = "<group>"; };
+		8465C7CD26E0C0080091A91E /* AppStructure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppStructure.entitlements; sourceTree = "<group>"; };
 		8476EDD426D8A0A200D7FF01 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		847D7D0A26DCD39A00EED1D3 /* UItableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableView.swift; sourceTree = "<group>"; };
 		847D7D0C26DCD65700EED1D3 /* AnimatedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTableCell.swift; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		849A094926D3DEE800C284CE /* AppStructure */ = {
 			isa = PBXGroup;
 			children = (
+				8465C7CD26E0C0080091A91E /* AppStructure.entitlements */,
 				84ED057526D52844003BF964 /* Model */,
 				84ED057226D527BF003BF964 /* ViewModel */,
 				847D7D1426DD4C1800EED1D3 /* Xibs */,
@@ -490,7 +492,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppStructure/AppStructure.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppStructure/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,6 +503,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Appinventiv.AppStructure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -508,7 +514,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppStructure/AppStructure.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppStructure/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Appinventiv.AppStructure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

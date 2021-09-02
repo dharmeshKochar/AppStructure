@@ -8,6 +8,7 @@
 import UIKit
 import FBSDKLoginKit
 import Swifter
+import AuthenticationServices
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
@@ -37,8 +38,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        handleSignUpButtonAnimation()
-//        handlefbButtonAnimation()
+        handleSignUpButtonAnimation()
+        handlefbButtonAnimation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,7 +62,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         emailTextField.addTarget(self, action: #selector(SignUpVC.validEmail), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(SignUpVC.validPassword), for: .editingChanged)
-        
     }
     
     private func handleSignUpButtonAnimation(){
@@ -108,6 +108,17 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     //MARK:- IBAction
+    @IBAction func appleButtonTapped(_ sender: Any) {
+        let provider = ASAuthorizationAppleIDProvider()
+        let request = provider.createRequest()
+        request.requestedScopes = [.fullName,.email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
+    
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
       //  AppRouter.gotoSignupVC(vc: self)
         let scene = SignUpVC.instantiate(fromAppStoryboard: .PreLogin)
@@ -228,4 +239,26 @@ extension LoginVC {
                 print("ERROR: \(error.localizedDescription)")
             }
         }
+}
+
+//MARK: Extension for AppleID
+extension LoginVC: ASAuthorizationControllerPresentationContextProviding , ASAuthorizationControllerDelegate {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Error")
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let credential as ASAuthorizationAppleIDCredential:
+            WelcomeVC.name = (credential.fullName?.givenName)!
+            break
+        default:
+            break
+        }
+    }
+    
 }

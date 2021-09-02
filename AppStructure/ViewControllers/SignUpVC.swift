@@ -8,6 +8,7 @@
 import UIKit
 import FBSDKLoginKit
 import Swifter
+import AuthenticationServices
 
 class SignUpVC: UIViewController ,UITextFieldDelegate{
     
@@ -156,6 +157,17 @@ class SignUpVC: UIViewController ,UITextFieldDelegate{
                 })
     }
     
+    @IBAction func appleButtonTapped(_ sender: Any) {
+        let provider = ASAuthorizationAppleIDProvider()
+        let request = provider.createRequest()
+        request.requestedScopes = [.fullName,.email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
+    
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         let request = SignUpRequest(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
         let validationResult = viewModel.signUpUser(signUpRequest: request)
@@ -182,7 +194,7 @@ extension SignUpVC {
         topTitleGap.constant = 20
         titleEmailGap.constant = 72
         confirmpasswordSignupGap.constant = 30
-        signupStackGap.constant = 52
+        signupStackGap.constant = 44
     }
 }
 
@@ -224,3 +236,25 @@ extension SignUpVC {
             }
         }
 }
+
+//MARK: Extension for AppleID
+extension SignUpVC: ASAuthorizationControllerPresentationContextProviding , ASAuthorizationControllerDelegate {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Error")
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let credential as ASAuthorizationAppleIDCredential:
+            WelcomeVC.name = (credential.fullName?.givenName)!
+            break
+        default:
+            break
+        }
+    }
+}
+ 
