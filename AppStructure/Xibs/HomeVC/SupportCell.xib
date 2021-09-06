@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SupportCell" customModule="AppStructure" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="421" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uN-HL-gjW">
+                        <rect key="frame" x="0.0" y="0.0" width="421" height="140"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book a friendly call with a member of our therapy team" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-uk-u6A">
+                                <rect key="frame" x="16" y="56" width="389" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want extra support?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-Ap-E45">
+                                <rect key="frame" x="16" y="16" width="389" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="dSt-Ap-E45" firstAttribute="leading" secondItem="4uN-HL-gjW" secondAttribute="leading" constant="16" id="FhY-Vl-ToE"/>
+                            <constraint firstAttribute="trailing" secondItem="SUN-uk-u6A" secondAttribute="trailing" constant="16" id="SkY-JO-eqa"/>
+                            <constraint firstAttribute="trailing" secondItem="dSt-Ap-E45" secondAttribute="trailing" constant="16" id="hge-Qq-8CX"/>
+                            <constraint firstItem="SUN-uk-u6A" firstAttribute="leading" secondItem="4uN-HL-gjW" secondAttribute="leading" constant="16" id="iir-Mi-1g4"/>
+                            <constraint firstItem="SUN-uk-u6A" firstAttribute="centerY" secondItem="4uN-HL-gjW" secondAttribute="centerY" constant="-6" id="ire-Ce-Fxe"/>
+                            <constraint firstItem="dSt-Ap-E45" firstAttribute="top" secondItem="4uN-HL-gjW" secondAttribute="top" constant="16" id="v4h-9n-XLn"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjX-5R-bMy">
+                        <rect key="frame" x="16" y="90" width="80" height="26"/>
+                        <color key="backgroundColor" red="0.30980393290000002" green="0.32549020649999999" blue="0.38431376220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="32D-GJ-AuY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Book a Call"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4uN-HL-gjW" secondAttribute="trailing" id="SIk-AU-xGa"/>
+                <constraint firstAttribute="bottom" secondItem="fjX-5R-bMy" secondAttribute="bottom" constant="24" id="VSs-XF-vuh"/>
+                <constraint firstItem="fjX-5R-bMy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="bfr-Ma-knu"/>
+                <constraint firstAttribute="bottom" secondItem="4uN-HL-gjW" secondAttribute="bottom" id="eHc-qu-hK0"/>
+                <constraint firstItem="4uN-HL-gjW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jJ8-g1-7aW"/>
+                <constraint firstItem="4uN-HL-gjW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pqx-Tp-pOh"/>
+            </constraints>
+            <size key="customSize" width="421" height="140"/>
+            <point key="canvasLocation" x="342.75362318840581" y="99.107142857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

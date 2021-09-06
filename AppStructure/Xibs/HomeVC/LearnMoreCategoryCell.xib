@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LearnMoreCategoryCell" customModule="AppStructure" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="169" height="31"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="169" height="31"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPA-bh-ZD7">
+                        <rect key="frame" x="45.5" y="9" width="78.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FG-nH-444">
+                        <rect key="frame" x="16" y="26.5" width="137" height="2"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="81Y-FX-2DW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="iPA-bh-ZD7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rgp-iE-VFY"/>
+                <constraint firstItem="8FG-nH-444" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ehX-Ip-P9d"/>
+                <constraint firstItem="iPA-bh-ZD7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kds-Lz-Pef"/>
+                <constraint firstAttribute="trailing" secondItem="8FG-nH-444" secondAttribute="trailing" constant="16" id="lq3-Zf-Fh1"/>
+                <constraint firstItem="8FG-nH-444" firstAttribute="top" secondItem="iPA-bh-ZD7" secondAttribute="bottom" constant="4" id="vp6-vP-TD4"/>
+            </constraints>
+            <size key="customSize" width="169" height="31"/>
+            <connections>
+                <outlet property="category" destination="iPA-bh-ZD7" id="XdA-J0-pTc"/>
+                <outlet property="selectedView" destination="8FG-nH-444" id="frx-WW-8hD"/>
+            </connections>
+            <point key="canvasLocation" x="207.97101449275365" y="90.736607142857139"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UpcomingSessionCell" customModule="AppStructure" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfN-Gj-owu">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The way to great health is from you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-DB-pu1">
+                                <rect key="frame" x="16" y="32" width="68" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i5-qd-eoB">
+                                <rect key="frame" x="56" y="2" width="38" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmg-Wn-G6Q">
+                                <rect key="frame" x="68" y="68" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hx9-eK-zuE"/>
+                                    <constraint firstAttribute="width" secondItem="vmg-Wn-G6Q" secondAttribute="height" multiplier="1:1" id="sjk-Nk-UAs"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0i5-qd-eoB" secondAttribute="trailing" constant="6" id="3XT-GR-RkK"/>
+                            <constraint firstItem="JOp-DB-pu1" firstAttribute="centerY" secondItem="QfN-Gj-owu" secondAttribute="centerY" id="5L9-16-YhR"/>
+                            <constraint firstItem="JOp-DB-pu1" firstAttribute="leading" secondItem="QfN-Gj-owu" secondAttribute="leading" constant="16" id="GqI-ZU-dOj"/>
+                            <constraint firstItem="0i5-qd-eoB" firstAttribute="top" secondItem="QfN-Gj-owu" secondAttribute="top" constant="2" id="LbL-uO-hRM"/>
+                            <constraint firstAttribute="bottom" secondItem="vmg-Wn-G6Q" secondAttribute="bottom" constant="2" id="MRT-bM-cnz"/>
+                            <constraint firstAttribute="trailing" secondItem="vmg-Wn-G6Q" secondAttribute="trailing" constant="2" id="cEQ-xZ-5KN"/>
+                            <constraint firstAttribute="trailing" secondItem="JOp-DB-pu1" secondAttribute="trailing" constant="16" id="ofu-7Z-5dt"/>
+                            <constraint firstItem="JOp-DB-pu1" firstAttribute="centerX" secondItem="QfN-Gj-owu" secondAttribute="centerX" id="xc0-dl-RlP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QfN-Gj-owu" secondAttribute="bottom" id="cqx-QK-GUd"/>
+                <constraint firstItem="QfN-Gj-owu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gpt-9K-sYk"/>
+                <constraint firstItem="QfN-Gj-owu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jqy-ur-Bd9"/>
+                <constraint firstAttribute="trailing" secondItem="QfN-Gj-owu" secondAttribute="trailing" id="sI9-kg-NIa"/>
+            </constraints>
+            <size key="customSize" width="100" height="100"/>
+            <connections>
+                <outlet property="bgView" destination="QfN-Gj-owu" id="dRL-4i-Qef"/>
+                <outlet property="bodyLabel" destination="JOp-DB-pu1" id="3D0-5s-NY4"/>
+                <outlet property="playButton" destination="vmg-Wn-G6Q" id="yfJ-ZV-lPL"/>
+                <outlet property="timeLabel" destination="0i5-qd-eoB" id="Sxa-bH-Dd3"/>
+            </connections>
+            <point key="canvasLocation" x="157.97101449275362" y="101.11607142857143"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
