@@ -11,13 +11,27 @@ class AppRouter {
   
     class func gotoSignupVC(vc: UIViewController) {
         let scene = SignUpVC.instantiate(fromAppStoryboard: .PreLogin)
-//        scene.modalPresentationStyle = .fullScreen
-//        scene.modalTransitionStyle = .partialCurl
         vc.present(scene, animated: true)
     }
     
+    class func gotoLoginVC(vc: UIViewController) {
+        let scene = LoginVC.instantiate(fromAppStoryboard: .PreLogin)
+        vc.present(scene, animated: true)
+    }
+    
+    
     class func gotoWelcomeVC(vc: UIViewController) {
-        let scene = WelcomeVC.instantiate(fromAppStoryboard: .PreLogin)
+        let scene = WelcomeVC.instantiate(fromAppStoryboard: .PostLogin)
+        vc.present(scene, animated: true)
+    }
+    
+    class func gotoMapVC(vc: UIViewController) {
+        let scene = MapVC.instantiate(fromAppStoryboard: .PostLogin)
+        vc.present(scene, animated: true)
+    }
+    
+    class func gotoHomeVC(vc: UIViewController) {
+        let scene = HomeVC.instantiate(fromAppStoryboard: .PostLogin)
         vc.present(scene, animated: true)
     }
 }

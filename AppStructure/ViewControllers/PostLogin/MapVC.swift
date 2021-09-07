@@ -11,10 +11,13 @@ import CoreLocation
 
 class MapVC: UIViewController {
     
+    //MARK: Properties
     let locationManager = CLLocationManager()
     
+    //MARK: IBOutlet
     @IBOutlet weak var mapView: MKMapView!
     
+    //MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -86,15 +89,11 @@ extension MapVC : MKMapViewDelegate {
             UIView.animate(withDuration: 2, delay: 2, options: [.curveLinear,.repeat], animations: {
                 outerView.transform = CGAffineTransform(scaleX: 3.6, y: 3.6)
                 outerView.alpha  = 0.02
-            }) { _ in
-                outerView.transform = .identity
-            }
+            })
             
             UIView.animate(withDuration: 2, delay: 2, options: [.autoreverse,.repeat], animations: {
             innerView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            }) { _ in
-                innerView.transform = .identity
-            }
+            })
         }
         
         annotationView?.canShowCallout = true

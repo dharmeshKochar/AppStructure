@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum AppStoryboard : String {
-    case PreLogin
+    case PreLogin , PostLogin
 }
 
 

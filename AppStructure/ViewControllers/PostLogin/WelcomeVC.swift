@@ -76,6 +76,7 @@ class WelcomeVC: UIViewController {
         tabBarView.clipsToBounds = true
     }
     
+    //MARK: IBAction
     @IBAction func cancelButtonAction(_ sender: UIButton) {
         cameraButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
         galleryButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
@@ -110,7 +111,13 @@ class WelcomeVC: UIViewController {
             }
         }
     }
-     
+    @IBAction func homeVCAction(_ sender: UIButton) {
+        AppRouter.gotoHomeVC(vc: self)
+    }
+    
+    @IBAction func mapVCAction(_ sender: UIButton) {
+        AppRouter.gotoMapVC(vc: self)
+    }
 }
 
 //MARK:- Extension for TableView

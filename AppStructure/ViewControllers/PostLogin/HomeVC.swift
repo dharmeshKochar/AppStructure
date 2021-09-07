@@ -9,14 +9,17 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    //MARK: Properties
     var categories = ["Recommended","Body Image","Communication","Mythbusters","Session"]
     
+    //MARK: IBOutlet
     @IBOutlet weak var todaySessionCollectionView: UICollectionView!
     @IBOutlet weak var upcomingSessionCollectionView: UICollectionView!
     @IBOutlet weak var learnMoreCategoryCollectionView: UICollectionView!
     @IBOutlet weak var learnMoreSelectedCategoryCollectionView: UICollectionView!
     @IBOutlet weak var supportCollectionView: UICollectionView!
     
+    //MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         todaySessionCollectionView.registerCell(with: TodaySessionCell.self)

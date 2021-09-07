@@ -46,11 +46,11 @@ class WalkthroughVC: UIViewController {
     
     //MARK: IBAction
     @IBAction func letsGoButtonAction(_ sender: Any) {
-        AppRouter.gotoWelcomeVC(vc: self)
+        AppRouter.gotoLoginVC(vc: self)
     }
     
     @IBAction func skipButtonAction(_ sender: UIButton) {
-        AppRouter.gotoWelcomeVC(vc: self)
+        AppRouter.gotoLoginVC(vc: self)
         
     }
     
